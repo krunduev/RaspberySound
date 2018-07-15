@@ -49,7 +49,8 @@ public class ListenGpioExample {
                 			i++;
                 			if (i>8) i=1;
                 			try {
-						if (delta > 118900 && delta < 121100) {
+						if ((delta > 118900 && delta < 121100) || (delta > 118900 + 120000 && delta < 121100 + 120000) 
+							|| (delta > 118900 + 240000 && delta < 121100 + 240000) || (delta > 118900 + 360000 && delta < 121100 + 360000)){
 							System.out.println(now + ": Noise, " + delta);
 						} else {
                 					String str = "omxplayer /home/pi/0" + i + ".mp3";
